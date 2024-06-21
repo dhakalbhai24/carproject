@@ -16,7 +16,7 @@ public class CarProject {
 	}
 	@GetMapping
 	public List<String> showMessage(){
-		return List.of("Red Car", "Blue Car");
+		return List.of("Red Car", "Blue Car", "Pink Car", "Yellow Car", "Maroon Car");
 	}
 
 }
