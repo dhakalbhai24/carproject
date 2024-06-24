@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="32b16bc4-c386-4110-a081-1ebda4ec07f2">
-      <console name="MySql@Inventory" type="STANDARD" schema="inventory" session="Main"><![CDATA[select * from car;]]></console>
+      <console name="MySql@Inventory" type="STANDARD" schema="inventory" session="Main"><![CDATA[select * from car_inventory]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -21,11 +21,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
+      <object connection-id="32b16bc4-c386-4110-a081-1ebda4ec07f2" object-ref="schemas/inventory/tables/car_sequence" />
       <object connection-id="32b16bc4-c386-4110-a081-1ebda4ec07f2" object-ref="consoles/MySql@Inventory" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="32b16bc4-c386-4110-a081-1ebda4ec07f2" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="32b16bc4-c386-4110-a081-1ebda4ec07f2" dataset="inventory.car_inventory" active-filter-id="" />
+    <filter-actions connection-id="32b16bc4-c386-4110-a081-1ebda4ec07f2" dataset="inventory.car_sequence" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

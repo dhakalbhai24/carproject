@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import jdk.jfr.Enabled;
 
 @Entity
-@Table
+@Table(name = "carInventory")
 public class Car {
     @Id
     @SequenceGenerator(
             name = "car_sequence",
             sequenceName = "car_sequence",
+            initialValue = 9000,
             allocationSize = 1
     )
 
@@ -17,18 +18,33 @@ public class Car {
             strategy = GenerationType.SEQUENCE,
             generator = "car_sequence"
     )
+    @Column(name = "id")
     private Long id;
+    @Column(name = "make")
     private String make;
+    @Column(name = "model")
     private String model;
+    @Column(name = "trim")
     private String trim;
+    @Column(name = "year")
     private String year;
+    @Column(name = "color")
     private String color;
+    @Column(name = "price")
     private double price;
+    @Column(name = "mileage")
+    private String mileage;
+    @Column(name = "car_type")
+    private String carType;
+    @Column(name = "transmission")
+    private String transmission;
+    @Column(name = "picture_url")
+    private String pictureUrl;
 
     public Car() {
     }
 
-    public Car(long id, String make, String model, String trim, String year, String color, double price) {
+    public Car(Long id, String make, String model, String trim, String year, String color, double price, String mileage, String carType, String transmission, String pictureUrl) {
         this.id = id;
         this.make = make;
         this.model = model;
@@ -36,20 +52,28 @@ public class Car {
         this.year = year;
         this.color = color;
         this.price = price;
+        this.mileage = mileage;
+        this.carType = carType;
+        this.transmission = transmission;
+        this.pictureUrl = pictureUrl;
     }
 
-    public Car(String make, String model, String trim, String year, String color, double price) {
+    public Car(String make, String model, String trim, String year, String color, double price, String mileage, String carType, String transmission, String pictureUrl) {
         this.make = make;
         this.model = model;
         this.trim = trim;
         this.year = year;
         this.color = color;
         this.price = price;
+        this.mileage = mileage;
+        this.carType = carType;
+        this.transmission = transmission;
+        this.pictureUrl = pictureUrl;
     }
 
     @Override
     public String toString() {
-        return "car{" +
+        return "Car{" +
                 "id=" + id +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
@@ -57,14 +81,18 @@ public class Car {
                 ", year='" + year + '\'' +
                 ", color='" + color + '\'' +
                 ", price=" + price +
+                ", mileage='" + mileage + '\'' +
+                ", carType='" + carType + '\'' +
+                ", transmission='" + transmission + '\'' +
+                ", pictureUrl='" + pictureUrl + '\'' +
                 '}';
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -114,6 +142,38 @@ public class Car {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(String mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getCarType() {
+        return carType;
+    }
+
+    public void setCarType(String carType) {
+        this.carType = carType;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }
 
