@@ -1,6 +1,7 @@
 package com.spring.carproject.car;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +21,13 @@ public class CarController {
     }
 
     @PostMapping
-    public void registerNewCar(@RequestBody Car car){
-        carService.addNewCar(car);
+    public void addNewInventory(@RequestBody Car car){
+        carService.addInventory(car);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteInventory(@PathVariable Long id){
+        return carService.deleteInventory(id);
     }
 
 }
